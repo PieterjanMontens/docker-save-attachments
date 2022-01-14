@@ -1,6 +1,14 @@
 docker-save-attachments
 =======================
 
+---
+*Simple update*
+- slightly updated
+- works with gmail IF unsecure applications are allowed
+- specify user with USER and password with PASSWORD env variables (no more `.fetchmailrc` to create)
+- just mount `/output` folder to extract attachments
+---
+
 This utility fetches emails regularly from an IMAP/POP3 account and saves the attachments to an output location, which can be a network file share.
 
 It was originally designed to allow a dumb MFP to send scans to a folder on a NAS, despite it not supporting SFTP, NFS, or Samba. It can be adapted easily for any use case where you need to automatically pipe something emailed to simple files in simple storage.

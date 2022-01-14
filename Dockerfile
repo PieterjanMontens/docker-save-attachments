@@ -1,16 +1,18 @@
-FROM ubuntu:latest
+FROM debian:buster-slim
+LABEL authors="Ding Corporation, Pieterjan Montens"
 
-MAINTAINER Ding Corporation
+ENV USER=user \
+    PASSWORD=password
 
 VOLUME /var/mail /config /output
 
 ADD save-attachments.crontab /etc/cron.d/save-attachments
 ADD save-attachments.sh /opt/save-attachments.sh
 
-# install packages
-RUN apt-get update \
-    && apt-get install -y fetchmail maildrop mpack \
-    && apt-get clean && rm -fr /var/lib/apt/lists/*
+COPY install-packages.sh .
+RUN ./install-packages.sh
+
+COPY default.fetchmailrc /config/.fetchmailrc
 
 RUN maildirmake /var/mail/working \
     && mkdir /var/mail/working/landing \

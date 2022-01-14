@@ -12,6 +12,10 @@ else
 	touch /var/mail/save-attachments.log
 fi
 
+# update fetchmail file with env settings
+sed -i -e 's|%USER%|'"$USER"'|' /config/.fetchmailrc
+sed -i -e 's|%PASSWORD%|'"$PASSWORD"'|' /config/.fetchmailrc
+
 # check for user config fetchmailrc
 if [ -f /config/.fetchmailrc ]; then
 	cp /config/.fetchmailrc /root/.fetchmailrc

@@ -1,0 +1,7 @@
+poll imap.gmail.com with proto IMAP timeout 60
+	user "%USER%" password "%PASSWORD%" is root here no keep
+mimedecode
+ssl
+sslcertck
+sslproto TLS1
+

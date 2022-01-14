@@ -6,6 +6,7 @@ DEBUG=0
 echo "== $(date -Is) =="
 
 # retrieve
+ping -c1 imap.gmail.com
 fetchmail
 
 # shuffle around some files to the working directory
