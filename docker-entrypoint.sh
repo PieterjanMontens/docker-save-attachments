@@ -15,6 +15,7 @@ fi
 # update fetchmail file with env settings
 sed -i -e 's|%USER%|'"$USER"'|' /config/.fetchmailrc
 sed -i -e 's|%PASSWORD%|'"$PASSWORD"'|' /config/.fetchmailrc
+sed -i -e 's|%CRON%|'"$CRON"'|' /etc/cron.d/save-attachments
 
 # check for user config fetchmailrc
 if [ -f /config/.fetchmailrc ]; then

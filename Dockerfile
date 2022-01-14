@@ -2,7 +2,8 @@ FROM debian:buster-slim
 LABEL authors="Ding Corporation, Pieterjan Montens"
 
 ENV USER=user \
-    PASSWORD=password
+    PASSWORD=password \
+    CRON="*/5 * * * *"
 
 VOLUME /var/mail /config /output
 

@@ -6,6 +6,7 @@ docker-save-attachments
 - slightly updated
 - works with gmail IF unsecure applications are allowed
 - specify user with USER and password with PASSWORD env variables (no more `.fetchmailrc` to create)
+- set custom cron delay with CRON env variable (default value : `*/5 * * * *`)
 - just mount `/output` folder to extract attachments
 ---
 
